@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myclient
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myclient
+  template:
+    metadata:
+      labels:
+        app: myclient
+    spec:
+      containers:
+      - name: myclient
+        image: hoz73/client_python_docker_for_k8s
+        command: [ "sleep" ]
+        args: [ "infinity" ]
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5050
+
+
+

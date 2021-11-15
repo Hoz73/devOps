@@ -1,0 +1,33 @@
+#to open the client in sh
+# kubectl exec -it myclient-c76d49bc-jq8gz  -- sh
+
+#to get all pods in default namespace
+#kubectl get pods
+
+#to create a proxy to your service
+#minikube service " name of your service"
+
+#to deploy the deployment.yml
+#kubectl apply -f deploiment.yml
+
+#to delete all deployments
+# kubectl delete --all deployments
+
+#to get all services
+#kubectl get svc
+
+#to delete all services
+#kubectl delete svc --all
+
+#to start minikube
+#minikube start
+
+#to get all pods
+#kubectl get pods -A
+
+***************************************
+to pull  and rut an image docker in shell
+#docker run -it --rm hoz73/client_python_docker
+
+to build an image docker
+#docker build --target build --tag hoz73/client_python_docker .

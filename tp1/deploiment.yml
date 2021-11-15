@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: server
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: myapp
+      app: server
   template:
     metadata:
       labels:
-        app: myapp
+        app: server
     spec:
       containers:
-      - name: myapp
+      - name: server
         image: hoz73/server_python_docker
         resources:
           limits:
@@ -21,41 +21,18 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 5000
-#      - name: myclient
-#        image: hoz73/client_python_docker
-#        command: [ "sleep" ]
-#        args: [ "infinity" ]
-#        resources:
-#          limits:
-#            memory: "128Mi"
-#            cpu: "500m"
-#        ports:
-#        - containerPort: 5050
-
 
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: myapp
+  name: server
 spec:
   type: NodePort
   selector:
-    app: myapp
+    app: server
   ports:
   - port: 80
     targetPort: 5000
 
-#---
-#apiVersion: v1
-#kind: Service
-#metadata:
-#  name: myclient
-#spec:
-#  type: NodePort
-#  selector:
-#    app: myclient
-#  ports:
-#  - port: 90
-#    targetPort: 8080

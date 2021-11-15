@@ -2,17 +2,18 @@ import requests
 from requests import Response
 
 
-# docs : https://www.nylas.com/blog/use-python-requests-module-rest-apis/
+#http://server/ for comunication between 2 pods in k8s
+#http://server:5000/ for comunication between two docker images/containers
 
 def calling_api(get_name: str, params=None, put=None, delete=None, post=None) -> Response:
     if put:
-        response: Response = requests.put(f'http://server:5000/{get_name}', json=params)
+        response: Response = requests.put(f'http://server/{get_name}', json=params)
     elif post:
-        response: Response = requests.post(f'http://server:5000/{get_name}', json=params)
+        response: Response = requests.post(f'http://server/{get_name}', json=params)
     elif delete:
-        response: Response = requests.delete(f'http://server:5000/{get_name}')
+        response: Response = requests.delete(f'http://server/{get_name}')
     else:
-        response: Response = requests.get(f'http://server:5000/{get_name}')
+        response: Response = requests.get(f'http://server/{get_name}')
     return response
 
 
