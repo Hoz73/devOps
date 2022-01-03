@@ -1,8 +1,0 @@
-Al Rasheed Hamze
-Bouvier Rémi
-
-1- deploy "deploiment.yml" for the server & "deploiment2.ymp" for the client
-
-2 - verify that the pods ares running
-
-3 - open the client's pod in  a terminal and test if the communication works

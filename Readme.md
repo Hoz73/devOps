@@ -19,28 +19,33 @@ Tous les fichiers concernant le TP sont stockés dans le dossier "tp1".
 ### Avec docker compose :
 
 - se rendre dans le dossier "server_rest_python"
-- entrer la comande : docker-compose up (téléchargement des images, lancement image client + server dans même network)
-- récupérer id conteneur client : docker ps
-- docker exec -it ID  bash -> accéder bash client / terragir conteneur du client
-- lancer le client : python main.py
-- possible d'interagir avec le serveur en utilisant les différentes commandes proposées dans le menu
+- Pour télécharger les images docker, et lancer l'image du client et du serveur dans un même network, entrer la commande :
+```docker-compose up```
+- Récupérer l'id  du conteneur client avec la commande: 
+```docker ps```
+- Accéder au bash du client / interagir avec le conteneur du client avec la commande :
+```docker exec -it ID  bash``` avec ID l'id du conteneur client récupéré dans l'étape précédente
+- Lancer le client avec la commande :
+``` python main.py```
+- Il est mintenant possible d'interagir avec le conteneur du serveur à partir du conteneur du client en utilisant les
+différentes commandes proposées dans le menu maintenant affiché dans le bash du client lancé à l'étape précédente.
 
 ### Avec kubernetes :
 
-run minikube : 
-minikube start
-déployer les deux fichiers de déploiment afin de déployer le client et le serveur (modifié)
-kubectl apply -f deploiment.yml
-kubectl apply -f deploiment2.yml
-vérifier que les pods sont en mode Running et puis récupérer le nom du client
-avec la commande : kubectl get pods
-puis, exécuter le client en mode interactif
-kubectl exec -it "le nom du client"  -- sh
+- Démarrer minikube avec la commande (peut prendre un certain temps) :
+```minikube start```
+- Déployer les 2 fichiers de déploiement afin de déployer à la fois le client et le serveur avec les commandes :
+```kubectl apply -f deploiment.yml``` et ```kubectl apply -f deploiment2.yml```
+- Vérifier que les pods sont bien en mode Running et récupérer le nom d'un des 2 clients avec la commande :
+```kubectl get pods```
+- Exécuter le client en mode interactif avec la commande :
+```kubectl exec -it NOM -- sh``` où NOM est le nom du pod client récupéré à l'étape précédente
+- Lancer le client avec la commande :
+``` python main.py```
+- Il est mintenant possible d'interagir avec le conteneur du serveur à partir du conteneur du client en utilisant les
+différentes commandes proposées dans le menu maintenant affiché dans le bash du client lancé à l'étape précédente.
 
 ## Auteurs:
 AL RASHEED Hamze
 BOUVIER Rémi
 M2 INFO - Introduction DevOps
-
-```
-```
