@@ -18,7 +18,7 @@ Tous les fichiers concernant le TP sont stockés dans le dossier "tp1".
 
 ### Avec docker compose :
 
-- se rendre dans le dossier "server_rest_python"
+- Se rendre dans le dossier "server_rest_python".
 - Pour télécharger les images docker, et lancer l'image du client et du serveur dans un même network, entrer la commande :
 ```docker-compose up```
 - Récupérer l'id  du conteneur client avec la commande: 
@@ -32,6 +32,7 @@ différentes commandes proposées dans le menu maintenant affiché dans le bash 
 
 ### Avec kubernetes :
 
+- Se rendre dans le dossier "tp1".
 - Démarrer minikube avec la commande (peut prendre un certain temps) :
 ```minikube start```
 - Déployer les 2 fichiers de déploiement afin de déployer à la fois le client et le serveur avec les commandes :
@@ -48,4 +49,5 @@ différentes commandes proposées dans le menu maintenant affiché dans le bash 
 ## Auteurs:
 AL RASHEED Hamze
 BOUVIER Rémi
+
 M2 INFO - Introduction DevOps
